@@ -269,17 +269,17 @@ btnSort.addEventListener("click", (e) => {
   }
 });
 // timer
-let vaqt = 500;
+let vaqt = 300;
 function timerFun() {
-  vaqt = vaqt - 1;
   let vaqtString = String(vaqt).split("");
-  if (Number(vaqtString[1]) > 6) {
-    vaqtString[1] -= 4;
+  let vaqtString1 = Number(vaqtString[0]);
+  let a = 60;
+  a = a - 1;
+  if (a === 0) {
+    vaqtString1 - 1;
   }
-  let vaqtString1 = vaqtString[0];
-  let vaqtString2 = vaqtString[1];
-  let vaqtString3 = vaqtString[2];
-  labelTimer.textContent = `0${vaqtString1}:${vaqtString2}${vaqtString3}`;
+
+  labelTimer.textContent = `0${vaqtString1}:a`;
   endTime();
 }
 setInterval(timerFun, 1000);
@@ -290,6 +290,12 @@ function endTime() {
     containerApp.style.opacity = "0";
   }
 }
+
+// setTimeout(() => {
+//   containerApp.style.opacity = "0";
+//   console.log("salom");
+// }, 5000);
+
 /////////////////////////////////////////////////
 // LECTURES
 
