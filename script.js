@@ -268,28 +268,27 @@ btnSort.addEventListener("click", (e) => {
     qu = 1;
   }
 });
-// timer
-let vaqt = 300;
-function timerFun() {
-  let vaqtString = String(vaqt).split("");
-  let vaqtString1 = Number(vaqtString[0]);
-  let a = 60;
-  a = a - 1;
-  if (a === 0) {
-    vaqtString1 - 1;
-  }
-
-  labelTimer.textContent = `0${vaqtString1}:a`;
-  endTime();
-}
-setInterval(timerFun, 1000);
-
 // close function
 function endTime() {
   if (labelTimer.textContent === "00:00") {
     containerApp.style.opacity = "0";
   }
 }
+// timer
+let a = 60;
+let vaqt = 400;
+function timerFun() {
+  let vaqtString = String(vaqt).split("");
+  let vaqtString1 = Number(vaqtString[0]);
+  a = a - 1;
+  if (a === 0) {
+    vaqtString1 - 1;
+  }
+
+  labelTimer.textContent = `0${vaqtString1}:${a}`;
+  endTime();
+}
+setInterval(timerFun, 1000);
 
 // setTimeout(() => {
 //   containerApp.style.opacity = "0";
