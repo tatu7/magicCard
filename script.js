@@ -72,7 +72,7 @@ const inputClosePin = document.querySelector(".form__input--pin");
 function timeFun() {
   let soat = new Date().toLocaleTimeString();
   let kun = String(new Date().getDate()).padStart(2, 0);
-  let oy = String(new Date().getMonth()).padStart(2, 0);
+  let oy = String(new Date().getMonth() + 1).padStart(2, 0);
   let yil = new Date().getFullYear();
   labelDate.textContent = `${kun}/${oy}/${yil} ${soat}`;
 }
@@ -308,4 +308,4 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+let movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
