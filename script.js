@@ -272,20 +272,23 @@ btnSort.addEventListener("click", (e) => {
 function endTime() {
   if (labelTimer.textContent === "00:00") {
     containerApp.style.opacity = "0";
+    timerFun();
   }
 }
 // timer
-let a = 60;
-let vaqt = 400;
+let a = 59;
+let vaqt = 4;
 function timerFun() {
-  let vaqtString = String(vaqt).split("");
-  let vaqtString1 = Number(vaqtString[0]);
   a = a - 1;
-  if (a === 0) {
-    vaqtString1 - 1;
+  if (a === 1) {
+    vaqt = vaqt - 1;
+    a = 59;
+  }
+  if (a < 10) {
+    a = `0${a}`;
   }
 
-  labelTimer.textContent = `0${vaqtString1}:${a}`;
+  labelTimer.textContent = `0${vaqt}:${a}`;
   endTime();
 }
 setInterval(timerFun, 1000);
